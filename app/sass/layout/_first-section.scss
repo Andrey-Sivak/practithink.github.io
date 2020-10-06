@@ -1,0 +1,145 @@
+.first-section {
+  margin-top: 39px;
+  @include flex( $j-c: space-between, $flex-wrap: nowrap );
+
+  //temp
+  margin-bottom: 1000px;
+
+  &__content {
+    padding-top: 87px;
+    max-width: 730px;
+    width: 100%;
+    margin-right: 20px;
+
+    @include response-to( extra-large ) {
+      max-width: 45%;
+      padding-top: 30px;
+    }
+
+    @include response-to( medium ) {
+      max-width: unset;
+      margin-right: 0;
+    }
+
+    @include response-to( small ) {
+      padding-top: 0;
+    }
+
+    &_simple-text {
+      font-size: 24px;
+      line-height: 20px;
+      color: color( dark-blue );
+      margin-bottom: 10px;
+      font-family: $nunito;
+      font-weight: 300;
+
+      @include response-to( extra-large ) {
+        font-size: 20px;
+      }
+
+      @include response-to( large ) {
+        font-size: 18px;
+      }
+
+      @include response-to( small ) {
+        font-size: 15px;
+        line-height: 17px;
+      }
+    }
+
+    &_text {
+      font-size: 45px;
+      line-height: 60px;
+      margin-bottom: 30px;
+      font-family: $open-sans;
+      font-weight: 300;
+      color: color( main-color );
+
+      @include response-to( extra-large ) {
+        font-size: 35px;
+        line-height: 50px;
+      }
+
+      @include response-to( large ) {
+        font-size: 29px;
+        line-height: 40px;
+      }
+
+      @include response-to( small ) {
+        font-size: 20px;
+        line-height: 25px;
+      }
+
+      & .bold {
+        font-weight: 800;
+      }
+    }
+
+    &_btn {
+      padding: 11px 0;
+      width: 169px;
+      font-size: 18px;
+      line-height: 18px;
+      margin-bottom: 49px;
+      font-family: $nunito;
+      font-weight: 400;
+
+      @include response-to( extra-large ) {
+        margin-bottom: 30px;
+      }
+
+      @include response-to( small ) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &_img {
+      max-width: 70%;
+
+      @include response-to( medium ) {
+        max-width: 100%;
+      }
+
+      & > img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 706px;
+    width: 100%;
+    padding-right: 60px;
+    position: relative;
+
+    @include response-to( extra-large ) {
+      max-width: 45%;
+    }
+
+    @include response-to( large ) {
+      padding-right: 0;
+    }
+
+    @include response-to( medium ) {
+      display: none;
+    }
+
+    &_help {
+      position: absolute;
+      width: 620px;
+      height: 230px;
+      background-image: url("../../img/line-first-section-bg.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: -1;
+      top: -110px;
+      left: -473px;
+      transform: rotate(7.32deg);
+    }
+
+    & > img {
+      width: 100%;
+    }
+  }
+}

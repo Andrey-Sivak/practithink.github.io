@@ -1,0 +1,17 @@
+$breakpoints: (
+        small: 767px,
+        medium: 992px,
+        large: 1200px,
+        extra-large: 1590px
+);
+
+$colors: (
+        main-color: #0E80A4,
+        dark-blue: #13273E
+);
+
+$z-layers: (
+        bottomless-pit: -9999,
+        default: 1,
+        menu: 2
+);

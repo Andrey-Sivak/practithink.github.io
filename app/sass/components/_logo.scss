@@ -1,0 +1,15 @@
+.logo {
+  max-width: 290px;
+
+  @include response-to( medium ) {
+    max-width: 220px;
+  }
+
+  @include response-to( small ) {
+    max-width: 120px;
+  }
+
+  &_img {
+    max-width: 100%;
+  }
+}

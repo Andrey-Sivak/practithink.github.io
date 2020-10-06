@@ -1,0 +1,214 @@
+.menu {
+  @include flex($j-c: space-between);
+  position: relative;
+  padding-left: 142px;
+  user-select: none;
+  @include transition-ease;
+
+  @include response-to( large ) {
+    padding-left: 80px;
+  }
+
+  @include response-to( medium ) {
+    @include flex( $direction: column, $j-c: center, $a-i: center );
+    overflow: hidden;
+    height: 100vh;
+    background-color: color( main-color );
+    padding-right: 1rem;
+    padding-left: 0;
+    transform: translateY(-100%);
+  }
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: color( main-color );
+  }
+
+  &__btn {
+    @include pos-absolute( 25px, 1rem );
+    z-index: z( default );
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+    @include transition-ease;
+    display: none;
+
+    @include response-to( medium ) {
+      display: block;
+    }
+
+    @include response-to( small ) {
+      top: 22px;
+    }
+  }
+
+  &__burger {
+    @include pos-absolute( .5rem, 0 );
+    width: 28px;
+    height: 3px;
+    background-color: color( main-color );
+
+    @at-root %burger_pseudo {
+      content: '';
+      position: absolute;
+      height: 3px;
+      background-color: color( main-color );
+      @include transition-ease;
+    }
+
+    &:before {
+      @extend %burger_pseudo;
+      top: -8px;
+      width: 28px;
+    }
+
+    &:after {
+      @extend %burger_pseudo;
+      width: 20px;
+      top: 8px;
+    }
+
+    &.active {
+      transform: rotate( 720deg );
+      background: transparent;
+
+      &:before {
+        transform: rotate(45deg) translate(5px, 8px);
+        background-color: #fff;
+      }
+
+      &:after {
+        transform: rotate(-45deg) translate(3px, -7px);
+        background-color: #fff;
+        width: 28px;
+      }
+    }
+  }
+
+  &__item {
+    @include transition-ease;
+
+    @include response-to( medium ) {
+      transform: translateX(100vw);
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+
+    &_link {
+      padding: 10px 0;
+      font-size: 18px;
+      color: color( main-color );
+      line-height: 18px;
+      display: block;
+      position: relative;
+      font-family: $quicksand;
+      font-weight: 500;
+
+      @include response-to( medium ) {
+        color: #fff;
+        margin: 10px 0;
+      }
+
+      &:before {
+        $height: 7px;
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: $height;
+        background-color: color( main-color );
+        left: 50%;
+        top: ($height / -2);
+        max-width: 0;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        @include transition-ease;
+      }
+
+      @include on-event {
+        &:before {
+          max-width: 100%;
+        }
+      }
+
+      &.active {
+
+        @include response-to( medium ) {
+          &:before {
+            background-color: #fff;
+            top: unset;
+            bottom: 0;
+            max-width: 100%;
+          }
+        }
+
+        &:before {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  &__wrap {
+
+    @include response-to( medium ) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      opacity: .98;
+      visibility: hidden;
+    }
+
+    &.active {
+      visibility: visible;
+    }
+  }
+
+  &__sign {
+    text-align: right;
+    margin-bottom: 10px;
+    font-family: $quicksand;
+    font-weight: 300;
+    color: color( main-color );
+    user-select: none;
+    font-size: 16px;
+
+    @include response-to( medium ) {
+      position: absolute;
+      right: 10%;
+      top: 25px;
+    }
+
+    @include response-to( small ) {
+      right: 17%;
+      font-size: 14px;
+      font-weight: 500;
+      top: 22px;
+    }
+
+    & > a {
+      color: inherit;
+
+      @include on-event {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  .menu__item:nth-child(#{$i}) {
+    transition-delay: ( $i * .1s ) + 0.15s;
+  }
+}

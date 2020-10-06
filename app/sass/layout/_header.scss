@@ -1,0 +1,18 @@
+.header {
+  padding-top: 20px;
+  @include flex( $j-c: space-between, $a-i: center );
+
+  &__menu {
+    max-width: 747px;
+    width: 100%;
+    z-index: z( menu );
+
+    @include response-to( large ) {
+      max-width: 590px;
+    }
+
+    @include response-to( medium ) {
+      max-width: 50%;
+    }
+  }
+}

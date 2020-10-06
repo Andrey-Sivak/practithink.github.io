@@ -1,0 +1,14 @@
+.btn {
+  display: block;
+  text-align: center;
+  color: #fff;
+  background-color: color( main-color );
+  border: 1px #fff solid;
+  @include transition-ease;
+
+  @include on-event {
+    color: color( main-color );
+    background-color: #fff;
+    border-color: color( main-color );
+  }
+}
