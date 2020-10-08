@@ -41,6 +41,23 @@ window.addEventListener('load', function () {
         for( let i = 0; i < btns.length; i++ ) {
             showForm( btns[i], form );
         }
-    })()
+    })();
+
+
+
+
+    (function menuDropDown() {
+        const btn = document.querySelector('.menu__item_link--drop');
+        const el = document.querySelector('.submenu-wrap');
+        const wrap = btn.parentElement;
+
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            this.classList.toggle('active');
+            el.classList.toggle('active');
+            wrap.classList.toggle('drop-down');
+        })
+    })();
 
 });

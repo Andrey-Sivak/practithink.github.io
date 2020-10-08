@@ -96,12 +96,29 @@
 
   &__item {
     @include transition-ease;
+    position: relative;
 
     @include response-to( medium ) {
       transform: translateX(100vw);
 
       &.active {
         transform: translateX(0);
+      }
+    }
+
+    &.drop-down {
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: #FAF9F7;
+      border: 1px solid color( main-color );
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      margin-left: -20px;
+
+      @include response-to( medium ) {
+        padding: 0;
+        background-color: color( main-color );
+        margin: 0;
       }
     }
 
@@ -156,6 +173,34 @@
           max-width: 100%;
         }
       }
+
+      &--drop {
+
+        &:after {
+          position: absolute;
+          content: none;
+          right: -15px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 8px;
+          height: 5px;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+
+          @include response-to( medium ) {
+            content: '';
+            background-image: url("../../img/row-down-white.svg");
+          }
+        }
+
+        &.active:after {
+
+          @include response-to( medium ) {
+            background-image: url("../../img/row-up-white.svg");
+          }
+        }
+      }
     }
   }
 
@@ -202,6 +247,56 @@
 
       @include on-event {
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+.submenu {
+  transform: translateY(50px);
+  transition: transform .3s ease-in-out;
+
+  &.active {
+    transform: translateY(0);
+
+    & .submenu-wrap {
+      height: auto;
+      opacity: 1;
+    }
+  }
+
+  &-wrap {
+    margin: -10px 0 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: height .5s ease-in-out, opacity .7s ease-in-out;
+
+    @include response-to( medium ) {
+      background-color: color( main-color );
+    }
+
+    &.active {
+      height: 156px;
+      opacity: 1;
+
+      & .submenu {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__item {
+    font-family: $nunito;
+    font-size: .9em;
+    padding: 5px 0;
+    border-bottom: 1px solid #fff;
+    
+    &_link {
+      color: color( main-color );
+
+      @include response-to( medium ) {
+        color: #fff;
       }
     }
   }

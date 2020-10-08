@@ -12,11 +12,11 @@ function headerFixed(target) {
     window.addEventListener('scroll', function (e) {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        if( scrollTop >= 100 ) {
+        if( scrollTop >= 10 ) {
             header.classList.add('fix');
         }
 
-        if( scrollTop < 100 ) {
+        if( scrollTop < 10 ) {
             header.classList.remove('fix');
         }
     })

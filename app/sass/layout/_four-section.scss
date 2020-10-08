@@ -34,12 +34,12 @@
     top: 0;
     bottom: 0;
     width: calc( (110vw - 1140px) / 2 );
-    left: 0;
+    left: 2px;
     transform: translateX(-100%);
     background-color: inherit;
 
     @include response-to( extra-large ) {
-      width: 25px;
+      width: 55px;
     }
   }
 

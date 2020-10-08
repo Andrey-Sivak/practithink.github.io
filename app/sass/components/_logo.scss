@@ -1,8 +1,8 @@
 .logo {
-  max-width: 290px;
+  max-width: 228px;
 
   @include response-to( medium ) {
-    max-width: 220px;
+    max-width: 200px;
   }
 
   @include response-to( small ) {

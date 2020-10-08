@@ -4,6 +4,11 @@
   margin-right: auto;
 
   @include response-to( extra-large ) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include response-to( medium ) {
     padding-left: 20px;
     padding-right: 20px;
   }

@@ -20,16 +20,17 @@
 
   &__content {
     padding-top: 43px;
-    @include flex( $j-c: space-between );
+    @include flex( $j-c: space-between, $a-i: initial );
   }
 
   &__item {
     max-width: 31%;
-    padding: 22px;
+    padding: 22px 22px 72px;
     border-radius: 4px;
     border: 1px solid rgb(222, 226, 230);
     @include flex( $direction: column, $a-i: center );
     font-family: $nunito;
+    position: relative;
 
     @include response-to( medium ) {
       max-width: 100%;
@@ -63,6 +64,8 @@
     }
 
     &_btn {
+      position: absolute;
+      bottom: 22px;
       width: 163px;
       font-family: $nunito;
       font-weight: 400;
