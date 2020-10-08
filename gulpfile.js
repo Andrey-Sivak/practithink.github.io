@@ -82,7 +82,12 @@ function watch() {
 	gulp.watch('./app/sass/**/*.scss', styles);
 	gulp.watch('./app/js/**/*.js', scripts);
 	gulp.watch('./*.html', html);
-}	
+}
+
+function libs() {
+	return gulp.src('app/libs/*')
+		.pipe(gulp.dest('dist/libs'));
+}
 
 function clean() {
 	return del(['dist/*']);
@@ -99,7 +104,7 @@ gulp.task('watch', watch);
 gulp.task('img', img);
 
 let build = gulp.series(clean,
-	gulp.parallel(styles, scripts, img, svg, html, fonts)
+	gulp.parallel(styles, scripts, img, libs, svg, html, fonts)
 );
 
 gulp.task('build', build);
