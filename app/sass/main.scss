@@ -13,12 +13,17 @@
 @import 'layout/grid';
 @import 'layout/header';
 @import 'layout/footer';
-@import 'layout/sidebar';
-@import 'layout/forms';
 @import 'layout/first-section';
+@import 'layout/sec-section';
+@import 'layout/third-section';
+@import 'layout/four-section';
+@import 'layout/five-section';
+@import 'layout/last-section';
+@import 'layout/register-form';
 
 @import 'components/buttons';
 @import 'components/logo';
+@import 'components/typography';
 @import 'components/carousel';
 @import 'components/media';
 @import 'components/thumbnails';

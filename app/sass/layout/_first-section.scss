@@ -2,9 +2,6 @@
   margin-top: 39px;
   @include flex( $j-c: space-between, $flex-wrap: nowrap );
 
-  //temp
-  margin-bottom: 1000px;
-
   &__content {
     padding-top: 87px;
     max-width: 730px;

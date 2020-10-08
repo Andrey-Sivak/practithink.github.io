@@ -1,0 +1,74 @@
+.third-section {
+  margin-top: 100px;
+
+  @include response-to( small ) {
+    margin-top: 50px;
+  }
+
+  &__caption {
+    color: color( main-color );
+    font-family: $nunito;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 21.5px;
+  }
+
+  & > .text {
+    text-align: center;
+  }
+
+  &__content {
+    padding-top: 43px;
+    @include flex( $j-c: space-between );
+  }
+
+  &__item {
+    max-width: 31%;
+    padding: 22px;
+    border-radius: 4px;
+    border: 1px solid rgb(222, 226, 230);
+    @include flex( $direction: column, $a-i: center );
+    font-family: $nunito;
+
+    @include response-to( medium ) {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    &_img {
+      max-height: 64px;
+      width: auto;
+    }
+
+    &_caption {
+      text-transform: uppercase;
+      color: color( main-color );
+      margin: 25px 0;
+      font-size: 16.5px;
+      line-height: 20px;
+      font-weight: 700;
+      text-align: center;
+
+      @include response-to( small ) {
+        margin: 15px 0;
+      }
+    }
+
+    &_text {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 22px;
+      margin-bottom: 28px;
+    }
+
+    &_btn {
+      width: 163px;
+      font-family: $nunito;
+      font-weight: 400;
+      line-height: 18px;
+      font-size: 18px;
+      padding: 16px 0;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.four-section {
+  margin-top: 100px;
+  padding: 40px 63px 40px 0;
+  background-color: color( main-color );
+  color: #fff;
+  position: relative;
+  margin-right: 165px;
+
+  @include response-to( large ) {
+    margin-right: 0;
+  }
+
+  @include response-to( small ) {
+    margin-top: 50px;
+    padding: 20px 0;
+  }
+
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 22px;
+    right: 0;
+    transform: translateX(100%);
+    background-color: inherit;
+
+    @include response-to( small ) {
+      content: '';
+    }
+  }
+
+  &__help-block {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc( (110vw - 1140px) / 2 );
+    left: 0;
+    transform: translateX(-100%);
+    background-color: inherit;
+
+    @include response-to( extra-large ) {
+      width: 25px;
+    }
+  }
+
+  &__caption {
+    font-family: $open-sans;
+    margin-bottom: 5px;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 38px;
+
+    @include response-to( small ) {
+      font-size: 25px;
+    }
+
+    &:not(:first-of-type) {
+      padding-left: 68px;
+      margin-bottom: 10px;
+
+      @include response-to( small ) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__text {
+    padding-left: 165px;
+    font-family: $nunito;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+
+    @include response-to( small ) {
+      padding-left: 0;
+    }
+  }
+
+  &__btn {
+    width: 169px;
+    padding: 11px 0;
+    border-radius: 5px;
+    font-family: $nunito;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1;
+
+    &_wrap {
+      @include flex( $j-c: flex-end );
+
+      @include response-to( small ) {
+        justify-content: center;
+      }
+    }
+  }
+}

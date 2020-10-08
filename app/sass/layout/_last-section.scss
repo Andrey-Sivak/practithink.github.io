@@ -1,0 +1,29 @@
+.last-section {
+  background-color: color( main-color );
+  color: #fff;
+  font-family: $nunito;
+  font-weight: 400;
+  font-size: 14.4px;
+  line-height: 21.6px;
+  padding: 22px 0;
+
+  & .container {
+    @include flex( $j-c: space-between, $a-i: center );
+
+    @include response-to( small ) {
+      flex-direction: column;
+
+      & p {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__soc-icons {
+    @include flex();
+
+    &_link {
+      margin-left: 15px;
+    }
+  }
+}

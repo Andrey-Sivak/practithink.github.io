@@ -5,3 +5,11 @@ body {
   background-position: top center, bottom center;
   background-size: contain;
 }
+
+.main {
+  margin-top: 126px;
+
+  @include response-to( medium ) {
+    margin-top: 86px;
+  }
+}

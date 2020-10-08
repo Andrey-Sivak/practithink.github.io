@@ -7,7 +7,9 @@ $dir: '../fonts';
 @include font-face( $dir, $quicksand, 'Medium' );
 
 @include font-face( $dir, $nunito, 'Light' );
-@include font-face( $dir, $nunito, 'Regular' );
+@include font-face( $dir, $nunito );
+@include font-face( $dir, $nunito, 'Bold' );
+@include font-face( $dir, $nunito, 'SemiBold' );
 
 @include font-face( $dir, $open-sans, 'Light' );
 @include font-face( $dir, $open-sans, 'SimiBold' );

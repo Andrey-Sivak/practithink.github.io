@@ -1,3 +1,5 @@
+$container: 1140px;
+
 $breakpoints: (
         small: 767px,
         medium: 992px,
@@ -13,5 +15,8 @@ $colors: (
 $z-layers: (
         bottomless-pit: -9999,
         default: 1,
-        menu: 2
+        menu: 2,
+        header-fix: 5,
+        reg-form: 6,
+        drop-down: 7
 );

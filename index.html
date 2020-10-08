@@ -5,21 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title></title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="./dist/libs/animate.css">
   <link rel="stylesheet" type="text/css" href="dist/css/all.css">
   <script type="text/javascript" src="dist/js/main.js"></script>
+  <script src="./dist/libs/wow.js"></script>
+  <script>
+
+    //- new WOW().init();
+
+    wow = new WOW({
+      boxClass: 'wow',
+      animateClass: 'animated',
+      offset: 0,
+      mobile: false,
+      live: true
+    });
+    wow.init();
+
+  </script>
 </head>
 <body>
 
-  <header class="container header">
+  <div class="register-form hide">
+    <div class="register-form__close">
+      <span data-close="true"></span>
+    </div>
+    <div class="register-form__content">
+      <p class="register-form__caption">Create an Account</p>
+      <p class="register-form__text">Already have an account? <a href="#">Sign In</a></p>
+      <p class="register-form__text">or Create with help</p>
+      <div class="register-form__external-login">
+        <a href="#" class="register-form__external-login_link">
+          <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="am-i" fill-rule="nonzero" class="external-login-icon">
+                <path d="M17.4776867,11.4951031 C16.9181506,11.4507732 15.7001093,11.435567 13.8238206,11.825 C11.1501093,12.3801547 9.91608872,14.8484536 9.91608872,16.7822165 C9.91608872,18.7152062 11.7668619,20.9572165 14.5436661,20.9572165 C16.6684083,20.9572165 17.8663465,19.6798969 18.3106764,19.0801547 C18.4104187,18.9469072 18.6111918,18.9536082 18.7016557,19.0938144 C18.8117073,19.265464 18.968666,19.4930412 19.1709856,19.743299 C19.387996,20.0126288 19.6776867,20.2809278 19.9124804,20.4822165 C20.1392846,20.6768041 20.4769135,20.665464 20.6939237,20.4600515 L22.5343877,18.7064433 C22.747532,18.5033505 22.7771712,18.1739691 22.6024289,17.9371134 C22.5008825,17.7997423 22.3727898,17.6224227 22.2145424,17.3992268 C21.7207279,16.6997423 21.7416042,16.1445876 21.7416042,16.1445876 L21.7416042,9.64510311 C21.7416042,8.86365981 21.2684083,5.65541239 16.2910887,5.65541239 C12.226398,5.65541239 10.9877382,8.54948454 10.6699547,9.61082471 C10.6091299,9.81391756 10.7413464,10.0229381 10.9503671,10.0579897 L13.4743362,10.4845361 C13.6276866,10.5103093 13.7800062,10.4337629 13.8488207,10.2940721 C14.1256248,9.7337629 14.930264,8.36984538 16.1882537,8.36984538 C17.772532,8.37036081 17.8341299,9.66597938 17.8341299,9.66597938 L17.8341299,11.1636598 C17.8341299,11.3569587 17.6709856,11.5100516 17.4776867,11.4951031 L17.4776867,11.4951031 Z M17.8756248,13.8987114 L17.8756248,15.7938144 C17.8756248,16.7835052 17.1941815,17.651031 16.2282021,17.865464 C15.9784598,17.9213918 15.6928929,17.9543815 15.365831,17.9543815 C13.2681506,17.9543815 13.6588722,15.2600515 14.6258825,14.457732 C15.3586145,13.8494845 16.8470166,13.643299 17.5248516,13.5796392 C17.7132537,13.5618557 17.8756248,13.7097938 17.8756248,13.8987114 L17.8756248,13.8987114 Z" id="Shape"></path>
+                <path d="M23.7673774,21.7845361 C24.7856764,21.6613402 25.2330991,21.5332474 25.5413464,21.8059279 C25.8501093,22.0780928 25.7418619,22.6332474 25.5413464,23.2657217 C25.3413464,23.8976804 24.8459856,24.4252577 25.3253671,24.6850515 C25.8856763,24.9884021 28.0426351,22.1987114 27.1459856,20.8131443 C26.4003671,19.6610825 23.2738207,20.9520619 23.0426351,21.1059279 C22.8114495,21.260567 22.8114495,21.4451031 22.8114495,21.4451031 C22.8114495,21.4451031 22.7498516,21.9082474 23.7673774,21.7845361 L23.7673774,21.7845361 Z" id="Shape"></path>
+                <path d="M16.0457279,26.3445876 C19.8083568,26.3445876 21.3923774,25.5639175 23.0173774,24.6590206 C24.6418619,23.753866 24.9506248,23.0755154 24.7243361,22.651031 C24.4980475,22.2268041 23.5720165,22.6641752 22.7498516,23.0134021 C21.9269134,23.3631443 19.3977897,24.3301546 15.7573258,24.3301546 C12.1168619,24.3301546 8.45577948,21.7587629 7.6740784,21.2141753 C6.8926351,20.6688144 6.61505779,21.2141753 6.61505779,21.2141753 C6.61505779,21.2141753 6.37897532,21.6664948 7.09882066,22.5510309 C7.81789286,23.435567 11.4733052,26.3445876 16.0457279,26.3445876 L16.0457279,26.3445876 Z" id="Shape"></path>
+                <path d="M6.00017566,0 C2.68637015,0 0,2.68697795 0,6.00017566 L0,25.9998243 C0,29.3136299 2.68697795,32 6.00017566,32 L25.9998243,32 C29.3136299,32 32,29.3130221 32,25.9998243 L32,6.00017566 C32,2.68637015 29.3130221,0 25.9998243,0 L6.00017566,0 Z M30.0206186,25.7617582 C30.0206186,28.1138618 28.1152761,30.0206186 25.7617582,30.0206186 L6.23824181,30.0206186 C3.88613818,30.0206186 1.97938144,28.1152761 1.97938144,25.7617582 L1.97938144,6.23824181 C1.97938144,3.88613818 3.88472389,1.97938144 6.23824181,1.97938144 L25.7617582,1.97938144 C28.1138618,1.97938144 30.0206186,3.88472389 30.0206186,6.23824181 L30.0206186,25.7617582 Z" id="Shape"></path>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a href="#" class="register-form__external-login_link">
+          <svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="fa-i" fill-rule="nonzero" class="external-login-icon">
+                <path d="M4.6875,32 L15.125,32 L15.125,20.625 L11.375,20.625 L11.375,16.875 L15.125,16.875 L15.125,12.1875 C15.125,9.60278319 17.2277832,7.5 19.8125,7.5 L24.5,7.5 L24.5,11.25 L20.75,11.25 C19.7160644,11.25 18.875,12.0910644 18.875,13.125 L18.875,16.875 L24.3308106,16.875 L23.7058106,20.625 L18.875,20.625 L18.875,32 L27.3125,32 C29.8972168,32 32,29.8972168 32,27.3125 L32,4.6875 C32,2.10278319 29.8972168,0 27.3125,0 L4.6875,0 C2.10278319,0 0,2.10278319 0,4.6875 L0,27.3125 C0,29.8972168 2.10278319,32 4.6875,32 Z M1.875,4.6875 C1.875,3.13671875 3.13671875,1.875 4.6875,1.875 L27.3125,1.875 C28.8632812,1.875 30.125,3.13671875 30.125,4.6875 L30.125,27.3125 C30.125,28.8632812 28.8632812,30.125 27.3125,30.125 L20.75,30.125 L20.75,22.5 L25.2941894,22.5 L26.5441894,15 L20.75,15 L20.75,13.125 L26.375,13.125 L26.375,5.625 L19.8125,5.625 C16.1938476,5.625 13.25,8.56884763 13.25,12.1875 L13.25,15 L9.5,15 L9.5,22.5 L13.25,22.5 L13.25,30.125 L4.6875,30.125 C3.13671875,30.125 1.875,28.8632812 1.875,27.3125 L1.875,4.6875 Z" id="Shape"></path>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a href="#" class="register-form__external-login_link">
+          <svg width="33px" height="32px" viewBox="0 0 33 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <path d="M32.4186114,11.7647059 L32.5400078,12.564674 C32.5621945,12.7108779 32.5935102,12.9687723 32.6242174,13.3227176 C32.8346869,15.7486879 32.6870156,18.460288 31.9063166,21.0499445 C31.4637295,22.51805 30.8347534,23.8529739 29.9955707,25.0200442 C26.6591897,29.6600247 21.9012617,32 16.865545,32 C8.2044369,32 0.704817874,25.9110127 0.704817874,16.2352941 C0.704817874,6.34802764 8.21268653,0 17.3411559,0 C20.8046568,0 23.7421837,1.03718079 26.1506243,2.76461584 C27.6034772,3.80666309 28.5651706,4.85781096 29.0602166,5.59095965 L29.5185226,6.26969751 L23.4094987,11.7647059 L32.4186114,11.7647059 Z M22.147219,11.0946905 C22.0925461,10.9129721 21.8668422,10.5463836 21.3677655,10.1456247 C20.4442582,9.40404781 18.9935014,8.94117647 16.865545,8.94117647 C12.618653,8.94117647 9.72133517,12.3380431 9.72133517,16.2352941 C9.72133517,20.0386999 12.637172,23.0588235 17.3411559,23.0588235 C19.5755668,23.0588235 21.1102327,22.306807 22.1341093,21.052031 C22.3485429,20.7892395 22.5311653,20.5144808 22.6842896,20.2352941 L15.9243685,20.2352941 L15.9243685,11.7647059 L22.3488039,11.7647059 L22.147219,11.0946905 Z M26.9873505,6.01465728 C26.9665938,5.99159267 26.9452611,5.96807905 26.923352,5.94413208 C26.4106591,5.38374965 25.7875071,4.82064222 25.0535367,4.29420769 C22.9512353,2.78634862 20.3909183,1.88235294 17.3411559,1.88235294 C9.18883917,1.88235294 2.58717082,7.46417317 2.58717082,16.2352941 C2.58717082,24.7748791 9.16769431,30.1176471 16.865545,30.1176471 C21.3066995,30.1176471 25.4916003,28.0594897 28.467289,23.9211322 C29.1778574,22.9329287 29.7186262,21.7852139 30.1040793,20.5066273 C30.7880097,18.2379622 30.9335962,15.8149216 30.7623062,13.6470588 L17.8067214,13.6470588 L17.8067214,18.3529412 L25.2149634,18.3529412 L24.9850987,19.4818963 C24.8374533,20.2070401 24.4223279,21.2251694 23.5925401,22.2420866 C22.2164648,23.9284872 20.1498352,24.9411765 17.3411559,24.9411765 C11.5824884,24.9411765 7.83898223,21.0637813 7.83898223,16.2352941 C7.83898223,11.3589778 11.5067488,7.05882353 16.865545,7.05882353 C19.4043469,7.05882353 21.2722131,7.65477572 22.5463455,8.67790473 C22.8302908,8.90591296 23.0670194,9.13802336 23.2617228,9.3658236 L26.9873505,6.01465728 Z" id="go-i" class="external-login-icon" fill-rule="nonzero"></path>
+            </g>
+          </svg>
+        </a>
+      </div>
+      <form action="#" class="register-form__form">
+        <div class="register-form__formgroup">
+          <input type="text"
+                 id="email"
+                 name="email"
+                 placeholder="Email"
+                 class="register-form__input">
+          <label for="email" class="register-form__label">Email</label>
+        </div>
+        <div class="register-form__formgroup form-drop-down" id="form-drop-down">
+          <p class="register-form__input form-drop-down_btn">Role</p>
+          <div class="register-form__drop hide">
+            <p class="register-form__input">Parent</p>
+            <p class="register-form__input">Teacher</p>
+            <p class="register-form__input">School</p>
+            <p class="register-form__input">Author</p>
+          </div>
+        </div>
+        <div class="register-form__formgroup">
+          <input type="text"
+                 id="pass"
+                 name="pass"
+                 placeholder="Password"
+                 class="register-form__input">
+          <label for="pass" class="register-form__label">Password</label>
+        </div>
+        <button type="submit"
+                id="register-form__btn"
+                class="btn blue-btn register-form__btn"
+                data-close="true">Create an account</button>
+      </form>
+      <p class="register-form__text">By creating an account, you accept the following Practithink <a href="#">Terms of service</a> and
+        <a href="#">Privacy policy</a></p>
+    </div>
+  </div>
+
+  <header class="header">
     <a href="#" class="logo">
       <img src="./dist/img/Logo.png" alt="img" class="logo_img">
     </a>
 
     <nav class="header__menu">
       <div class="menu__sign">
-        <a href="#" class="menu__sign_in">Login</a>/
-        <a href="#" class="menu__sign_up">Sing up</a>
+        <a href="#" class="menu__sign_in to-form">Login</a>/
+        <a href="#" class="menu__sign_up to-form">Sing up</a>
       </div>
 
       <div class="menu__btn">
@@ -48,19 +137,141 @@
     </nav>
   </header>
 
-  <main class="container">
+  <main class="container main">
+
     <section class="first-section">
       <div class="first-section__content">
         <p class="first-section__content_simple-text">Say Hello to learning success, one topic at a time.</p>
         <p class="first-section__content_text">
-          <span class="bold">Smart and Fun way to study</span> <br>
-          and build a deep understanding in math, science, English and more.</p>
-        <a href="#" class="btn first-section__content_btn">Join now</a>
+          <span class="bold">Smart and Fun way to study</span> and build a deep understanding in math, science, English and more.</p>
+        <a href="#" class="btn blue-btn first-section__content_btn">Join now</a>
         <img src="./dist/img/formula.png" alt="img" class="first-section__content_img">
       </div>
       <div class="first-section__img">
         <span class="first-section__img_help"></span>
         <img src="./dist/img/first-section-img.svg" alt="img">
+      </div>
+    </section>
+
+    <section class="sec-section wow animate__fadeIn" data-wow-offset="10" data-wow-duration="2.5s">
+      <p class="section-caption">Features that make the entire learning process easier and effective</p>
+      <p class="sec-section__sub-caption">The major keys to a confident student and good test taker are their problem-solving skills and practice. Practice makes perfect.</p>
+      <div class="sec-section__content">
+        <div class="sec-section__item wow animate__fadeInLeftBig" data-wow-offset="10" data-wow-duration="1s">
+          <div class="sec-section__img">
+            <img src="./dist/img/f1.svg" alt="icon">
+          </div>
+          <div class="sec-section__text">
+            <p class="sec-section__item_caption">Learning exercises</p>
+            <p class="text">We host a database of online interactive exercises, quizzes and game-like activities, where each one is appropriately tailored to K-8 students.</p>
+          </div>
+        </div>
+        <div class="sec-section__item wow animate__fadeInRightBig" data-wow-offset="10" data-wow-duration="1s">
+          <div class="sec-section__img">
+            <img src="./dist/img/f2.svg" alt="icon">
+          </div>
+          <div class="sec-section__text">
+            <p class="sec-section__item_caption">Progress tracking</p>
+            <p class="text">Clearly see what's done well and what still is in progress. Monitor all lesson activities and test results and prepare report cards. Ideal for homeschooling.</p>
+          </div>
+        </div>
+        <div class="sec-section__item wow animate__fadeInLeftBig" data-wow-offset="10" data-wow-duration="1.5s">
+          <div class="sec-section__img">
+            <img src="./dist/img/f3.svg" alt="icon">
+          </div>
+          <div class="sec-section__text">
+            <p class="sec-section__item_caption">Printable resources</p>
+            <p class="text">Printable material such as practice sheets, coloring sheets, homework help resources, various reference tables for students, as well as everyday assessments, handouts, full-year curriculum for teachers.</p>
+          </div>
+        </div>
+        <div class="sec-section__item wow animate__fadeInRightBig" data-wow-offset="10" data-wow-duration="1.5s">
+          <div class="sec-section__img">
+            <img src="./dist/img/f4.svg" alt="icon">
+          </div>
+          <div class="sec-section__text">
+            <p class="sec-section__item_caption">Goals and Awards</p>
+            <p class="text">With us, it's easy to set personal goals and make progress one step at a time. Games-like awards keep students focussed and motivated.</p>
+          </div>
+        </div>
+        <div class="sec-section__item wow animate__fadeInLeftBig" data-wow-offset="10" data-wow-duration="2s">
+          <div class="sec-section__img">
+            <img src="./dist/img/f5.svg" alt="icon">
+          </div>
+          <div class="sec-section__text">
+            <p class="sec-section__item_caption">Online test preparation</p>
+            <p class="text">Smart way to prepare for tests. Gifted and Talented programs. Private school admission and school exams.</p>
+          </div>
+        </div>
+        <div class="sec-section__item wow animate__fadeInRightBig" data-wow-offset="10" data-wow-duration="2s">
+          <div class="sec-section__img">
+            <img src="./dist/img/f6.svg" alt="icon">
+          </div>
+          <div class="sec-section__text">
+            <p class="sec-section__item_caption">Notifications</p>
+            <p class="text">Regular reminders, updates, report cards and other helpful notifications to keep you on track and progressing in the right direction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="third-section wow animate__fadeIn" data-wow-offset="10" data-wow-duration="2.5s">
+      <p class="third-section__caption">Personalized plans for every student</p>
+      <p class="text">We believe that learning is a dynamic process. While facts remain facts, ways to learn them should keep up with today's technologies. We believe every student, that is, every mind and soul, is different. Accordingly, we offer different strategies and explanations on the very same topic that have been created by our affiliated teachers. Together, we'll find the right approach that will enable you to achieve your goals.</p>
+      <div class="third-section__content">
+        <div class="third-section__item wow animate__fadeInUpBig" data-wow-offset="10" data-wow-duration="1s">
+          <img src="./dist/img/sn1.svg" alt="icon" class="third-section__item_img">
+          <p class="third-section__item_caption">our vision</p>
+          <p class="third-section__item_text">Learning through customized practice sessions and critical thinking. We obsess over providing the tools students will need to acquire practical skills, and confidence in certain subjects and the learning process in general. We believe that everyday practice will reinforce what has been learned to prepare your student for the next level. We prioritize understanding over memorization, so our online learning tools are built accordingly.</p>
+          <a href="#" class="btn blue-btn third-section__item_btn">Read more</a>
+        </div>
+        <div class="third-section__item wow animate__fadeInUpBig" data-wow-offset="10" data-wow-duration="1.5s">
+          <img src="./dist/img/sn2.svg" alt="icon" class="third-section__item_img">
+          <p class="third-section__item_caption">our mission</p>
+          <p class="third-section__item_text">To help students to build critical thinking skills, and a confident and fearless approach to all kinds of academic activities and tests. To help parents to set goals through test prep studies and/or everyday practice. To let parents track the progress and clearly determine what topics require extra attention for your child. To provide teachers and tutors with appropriate tools to prepare online lessons and tests for one student or an entire class.</p>
+          <a href="#" class="btn blue-btn third-section__item_btn">Read more</a>
+        </div>
+        <div class="third-section__item wow animate__fadeInUpBig" data-wow-offset="10" data-wow-duration="2s">
+          <img src="./dist/img/sn3.svg" alt="icon" class="third-section__item_img">
+          <p class="third-section__item_caption">our solutions</p>
+          <p class="third-section__item_text">We attempt to make the entire study process easier and efficient. We offer online test-preparation, mini and full size lessons in different forms, quizzes and tests. We keep track of the students activity, analyze it, and then clearly show what topics in a subject have already been mastered and what still requires attention. A tailored schedule, goals and awards will lead to motivation and better results.</p>
+          <a href="#" class="btn blue-btn third-section__item_btn">Read more</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="four-section">
+      <div class="four-section__help-block"></div>
+      <p class="four-section__caption">Make sure your kids have</p>
+      <p class="four-section__caption">all they need for success…</p>
+      <p class="four-section__text">Understanding is the key to success, and we believe that education is an essential component. Although facts remain facts, we exploit today’s technologies to assist kids to learn these facts, and then know how to practically apply them to solve problems.</p>
+      <div class="four-section__btn_wrap">
+        <a href="#" class="btn white-btn four-section__btn">Join now</a>
+      </div>
+    </section>
+    
+    <section class="five-section wow animate__fadeIn" data-wow-offset="10" data-wow-duration="2.5s">
+      <p class="section-caption">More reasons to join our learning community</p>
+      <div class="five-section__content">
+        <div class="five-section__item">
+          <p class="five-section__item_caption">Teachers</p>
+          <p class="five-section__item_case">Fully customized study plan</p>
+          <p class="five-section__item_case">Clear progress reports</p>
+          <p class="five-section__item_case">Personalized goals for your child linked to awards</p>
+          <p class="five-section__item_case">Game-like points for completion of levels</p>
+          <p class="five-section__item_case">Reminders for scheduled practice</p>
+          <p class="five-section__item_case">Use suggested practice and tests or prepare your own.</p>
+          <p class="five-section__item_case">And much more</p>
+        </div>
+        <div class="five-section__item">
+          <p class="five-section__item_caption">Parents</p>
+          <p class="five-section__item_case">Ready-to-use materials to prepare everyday assignments, homework or test in minutes.</p>
+          <p class="five-section__item_case">Use our software to easily create your own exercises or tests for your students only or for the entire PractiThink community (paid)</p>
+          <p class="five-section__item_case">Clear progress reports for every student</p>
+          <p class="five-section__item_case">Set assignments and points for entire class or for individual students</p>
+          <p class="five-section__item_case">Game-like awards for completed levels</p>
+          <p class="five-section__item_case">Reminders for scheduled practice. Block test assignments by setting start and cut-off times</p>
+          <p class="five-section__item_case">And much more</p>
+        </div>
       </div>
     </section>
   </main>
@@ -89,6 +300,23 @@
       <a href="#" class="footer__item_link">Support</a>
     </div>
   </footer>
+  <div class="last-section">
+    <div class="container">
+      <p>PractiThink &copy; 2020|All Rights Reserved</p>
+      <p>Privacy & Cookie Policy</p>
+      <div class="last-section__soc-icons">
+        <a href="#" class="last-section__soc-icons_link">
+          <img src="./dist/img/fb-icon.svg" alt="img" class="last-section__soc-icons_img">
+        </a>
+        <a href="#" class="last-section__soc-icons_link">
+          <img src="./dist/img/tw-icon.svg" alt="img" class="last-section__soc-icons_img">
+        </a>
+        <a href="#" class="last-section__soc-icons_link">
+          <img src="./dist/img/inst-icon.svg" alt="img" class="last-section__soc-icons_img">
+        </a>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
